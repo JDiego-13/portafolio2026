@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@import "./styles/theme.css";
+@import "./styles/globals.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #020617; /* slate-950 */
+  color: white;
+  font-family: Inter, system-ui, sans-serif;
+}

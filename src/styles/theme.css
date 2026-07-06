@@ -1,0 +1,32 @@
+@theme {
+    
+    /* ===========================
+        COLORES
+       ===========================
+    */
+    --color-background: #020617;
+    --color-surface: #0f172a;
+    --color-surface-light: #1e293b;
+
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+
+    --color-text: #ffffff;
+    --color-text-secondary: #94a3b8;
+
+    --color-border: #334155;
+
+    /* ===========================
+        SOMBRAS
+       ===========================
+    */
+    --shadow-card: 0 10px 25px rgba(0,0,0,.25);
+    --shadow-bkue: 0 0 35px rgba(59,130,246,.25);
+
+    /* ===========================
+        BORDER
+       ===========================
+    */
+    --radius-card: 1rem;
+    --radius-button: .75rem;
+}
