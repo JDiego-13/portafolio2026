@@ -3,7 +3,7 @@ export const projects = [
         title: "SAFRA",
         company: "Agencia de Destinos Feliz Viaje",
         period: "Ago 2025 - Ene 2026",
-        image: "/projects/safra.png",
+        image: "/src/assets/images/safra.jpg",
         technologies: [
             "PHP",
             "JavaScript",

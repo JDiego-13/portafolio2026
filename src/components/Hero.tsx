@@ -1,6 +1,37 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineDocumentArrowDown } from "react-icons/hi2";
-import meImg from "../assets/images/me.jpg"
+import meImg from "../assets/images/me.jpg";
+import { motion, type Variants} from "framer-motion";
+
+const leftVariant: Variants = {
+    hidden: {
+        opacity: 0,
+        x: -80
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+        },
+    },
+};
+
+const rightVariant: Variants = {
+    hidden: {
+        opacity: 0,
+        x: 80
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut"
+        },
+    },
+};
 
 const Hero = () => {
   return (
@@ -10,7 +41,12 @@ const Hero = () => {
     >
         <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between md:flex-row">
             {/* INFORMACION */}
-            <div className="flex-1 text-center md:text-left">
+            <motion.div 
+                className="flex-1 pb-12 text-center md:pb-20 md:text-left"
+                variants={leftVariant}
+                initial="hidden"
+                animate="visible"
+            >
                 <p className="mb-4 text-blue-500 font-medium">
                     👋 Hola, soy
                 </p>
@@ -28,54 +64,65 @@ const Hero = () => {
                 </p>
 
                 {/* BOTONES */}
-                <div className="mt-8 flex flex-wrap justify-center gap-8 md:justify-start">
-                    <a 
+                <motion.div className="mt-8 flex flex-wrap justify-center gap-8 md:justify-start">
+                    <motion.a 
                         href="#projects"
                         className="rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transtion hover:bg-blue-600"
+                        whileHover={{ y: -3, scale: 1.03}}
+                        whileTap={{ scale: 0.96}}
                     >
                     Ver proyectos
-                    </a>
+                    </motion.a>
 
-                    <a 
+                    <motion.a 
                         href="/CV_Diego_Espinoza.pdf"
-                        className="flex items-center gap-2 rounded-xl border border-slate-700 px-6 py-3 text-white transition hover:border-blue-500 hover:text-blue-500"                    
+                        className="flex items-center gap-2 rounded-xl border border-slate-700 px-6 py-3 text-white transition hover:border-blue-500 hover:text-blue-500"
+                        whileHover={{ y: -3, scale: 1.03}}
+                        whileTap={{ scale: 0.96}}
                     >
                         Descargar CV
 
                         <HiOutlineDocumentArrowDown size={20} />
-                    </a>
-                </div>
+                    </motion.a>
+                </motion.div>
 
                 {/* REDES */}
                 <div className="mt-10 flex justify-center gap-6 md:justify-start">
-                    <a 
+                    <motion.a 
                         href="https://github.com/JDiego-13"
                         target="_blank"
                         rel="noreferrer"
                         className="text-3xl text-slate-400 transition hover:text-blue-500"
+                        whileHover={{ y: -4, rotate: 8, scale: 1.2}}
                     >
                         <FaGithub />
-                    </a>
+                    </motion.a>
 
-                    <a 
+                    <motion.a 
                         href="https://linkedin.com/in/jdiego13"
                         target="_blank"
                         rel="noreferrer"
                         className="text-3xl text-slate-400 transition hover:text-blue-500"
+                        whileHover={{ y: -4, rotate: 8, scale: 1.2}}
                     >
                         <FaLinkedin />
-                    </a>
+                    </motion.a>
                 </div>
-            </div>
+            </motion.div>
 
             {/* IMAGEN */}
-            <div className="flex flex-1 justify-center">
-                <img 
+            <motion.div
+                className="flex flex-1 justify-center"
+                variants={rightVariant}
+            >
+                <motion.img 
                     src={meImg} 
                     alt="Diego" 
                     className="w-[420px] rounded-full border-4 border-blue-500 shadow-2xl shadow-blue-500/30"
+                    animate={{ y: [0, -10, 0]}}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeOut",}}
                 />
-            </div>
+            </motion.div>
         </div>
     </section>
   )
