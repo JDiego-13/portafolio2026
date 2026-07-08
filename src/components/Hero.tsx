@@ -67,7 +67,7 @@ const Hero = () => {
                 <motion.div className="mt-8 flex flex-wrap justify-center gap-8 md:justify-start">
                     <motion.a 
                         href="#projects"
-                        className="rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transtion hover:bg-blue-600"
+                        className="rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transition hover:bg-blue-600"
                         whileHover={{ y: -3, scale: 1.03}}
                         whileTap={{ scale: 0.96}}
                     >

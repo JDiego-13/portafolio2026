@@ -1,6 +1,10 @@
+import globalLogo from "../assets/images/globaldms.png";
+import nttdataLogo from "../assets/images/NNT-Data.jpg";
+
 export const experience = [
   {
     company: "GLOBAL DMS",
+    logo: globalLogo,
     position: "Frontend & Backend Developer",
     location: "León, Guanajuato",
     period: "Marzo 2026 - Actualidad",
@@ -25,6 +29,7 @@ export const experience = [
 
   {
     company: "NTT DATA",
+    logo: nttdataLogo,
     position: "Soporte Técnico",
     location: "León, Guanajuato",
     period: "Sep 2025 - Ene 2026",

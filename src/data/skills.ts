@@ -1,40 +1,95 @@
+import {
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiJavascript,
+  SiDotnet,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiAxios,
+  SiSwagger
+} from "react-icons/si";
+import { FaDatabase } from "react-icons/fa";
+
 export const skills = [
   {
     title: "Frontend",
     items: [
-      "React",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "HTML5",
-      "CSS3"
-    ]
+      {
+        name: "React",
+        icon: SiReact,
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+      },
+      {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
+      },
+      {
+        name: "JavaScript",
+        icon: SiJavascript,
+      },
+    ],
   },
+
   {
     title: "Backend",
     items: [
-      "C#",
-      ".NET",
-      "APIs REST",
-      "Swagger",
-      "Axios"
-    ]
+      {
+        name: "C#",
+        icon: SiDotnet,
+      },
+      {
+        name: ".NET",
+        icon: SiDotnet,
+      },
+      {
+        name: "Swagger",
+        icon: SiSwagger,
+      },
+      {
+        name: "Axios",
+        icon: SiAxios,
+      },
+    ],
   },
+
   {
     title: "Base de datos",
     items: [
-      "Oracle",
-      "SQL",
-      "TOAD"
-    ]
+      {
+        name: "Oracle",
+        icon: FaDatabase,
+      },
+      {
+        name: "SQL",
+        icon: FaDatabase,
+      },
+      {
+        name: "TOAD",
+        icon: FaDatabase,
+      },
+    ],
   },
+
   {
     title: "Herramientas",
     items: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Figma"
-    ]
-  }
+      {
+        name: "Git",
+        icon: SiGit,
+      },
+      {
+        name: "GitHub",
+        icon: SiGithub,
+      },
+      {
+        name: "Postman",
+        icon: SiPostman,
+      },
+    ],
+  },
 ];

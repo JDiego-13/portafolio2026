@@ -1,4 +1,5 @@
 import { experience } from "../data/experience";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
@@ -17,9 +18,10 @@ const Experience = () => {
               key={job.company}
               className="rounded-2xl border border-slate-700 bg-slate-800 p-8 transition duration-300 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10"
             >
-              
+
               {/* EMPRESA */}
-              <div className="flex flex-col justify-between gap-2 md:flex-row">
+              <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
+                {/* IZQUIERDA */}
                 <div>
                   <h3 className="text-2xl font-bold text-white">
                     {job.position}
@@ -28,19 +30,36 @@ const Experience = () => {
                   <p className="mt-1 text-blue-400">
                     {job.company} · {job.location}
                   </p>
+
+                  {/* DESCRIPCION */}
+                  <ul className="mt-6 list-disc space-y-2 pl-5 text-slate-300">
+                    {job.description.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
 
-                <span className="font-medium text-slate-400">
-                  {job.period}
-                </span>
-              </div>
+                {/* DERECHA */}
+                <div className="flex flex-col items-center gap-4">
+                  <span className="font-medium text-slate-400">
+                    {job.period}
+                  </span>
 
-              {/* DESCRIPCION */}
-              <ul className="mt-6 list-disc space-y-2 pl-5 text-slate-300">
-                {job.description.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+                  <motion.img
+                    src={job.logo}
+                    alt={job.company}
+                    className="h-46 w-46 rounded-2xl border border-slate-700 bg-white object-contain p-4 shadow-lg"
+                    animate={{ y: [0, -3, 0 ]}}
+                    transition={{
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    
+                  />
+                </div>
+
+              </div>
 
               {/* TECNOLOGIAS */}
               <div className="mt-8 flex flex-wrap gap-3">
