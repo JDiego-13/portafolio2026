@@ -1,5 +1,45 @@
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion, type Variants } from "framer-motion";
+
+const textVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+const cardContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Contact = () => {
   return (
@@ -8,13 +48,31 @@ const Contact = () => {
       className="bg-slate-900 px-6 py-28"
     >
       <div className="mx-auto max-w-7xl">
-        <h2 mb-16 text-center text-4xl font-bold text-white>
-          Contacto
-        </h2>
+        <motion.div
+          className="mb-16 text-center"
+          variants={textVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <p className="font-medium text-blue-500">
+            Trabajemos juntos
+          </p>
+
+          <h2 className="mt-2 text-4xl font-bold text-white md:text-5xl">
+            Contacto
+          </h2>
+        </motion.div>
+
 
         <div className="grid gap-12 md:grid-cols-2">
           {/* TEXTO */}
-          <div>
+          <motion.div
+            variants={textVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <h3 className="text-3xl font-bold text-white">
               ¿Tienes un proyecto en mente?
             </h3>
@@ -28,18 +86,30 @@ const Contact = () => {
 
             <p className="mt-6 text-slate-500">
               Si crees que puedo aportar en tu proyecto,
-              estoy abierto a discutir ideas y explorar 
+              estoy abierto a discutir ideas y explorar
               oportunidades de colaboración.
             </p>
-          </div>
+          </motion.div>
 
           {/* INFORMACION */}
-          <div className="space-y-5">
-            <a 
+          <motion.div 
+            className="space-y-5"
+            variants={cardContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}  
+          >
+            <motion.a
+              variants={cardVariant}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ duration: 0.2,}}
               href="mailto:diegozack6@gmail.com"
-              className="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-950 p-6 transition hover:border-blue-500"
+              className="group flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-950 p-6 hover:border-blue-500"
             >
-              <Mail className="text-blue-500" size={28} />
+              <motion.div whileHover={{ rotate: 12, scale: 1.2 }}>
+                <Mail className="text-blue-500" size={28} />
+              </motion.div>
+              
 
               <div>
                 <h4 className="font-semibold text-white">
@@ -50,15 +120,17 @@ const Contact = () => {
                   diegozack6@gmail.com
                 </p>
               </div>
-            </a>
+            </motion.a>
 
-            <a 
+            <a
               href="https://linkedin.com/in/jdiego13"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-950 p-6 transition hover:border-blue-500"
             >
-              <FaLinkedin className="text-blue-500" size={28}/>
+              <motion.div whileHover={{ rotate: 12, scale: 1.2 }}>
+                <FaLinkedin className="text-blue-500" size={28} />
+              </motion.div>
 
               <div>
                 <h4 className="font-semibold text-white">
@@ -71,32 +143,36 @@ const Contact = () => {
               </div>
             </a>
 
-            <a 
+            <a
               href="https://github.com/JDiego-13"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-950 p-6 transition hover:border-blue-500"
             >
+              <motion.div whileHover={{ rotate: 12, scale: 1.2 }}>
                 <FaGithub className="text-blue-500" size={28} />
+              </motion.div>
 
-                <div>
-                  <h4 className="font-semibold text-white">
-                    GitHub
-                  </h4>
+              <div>
+                <h4 className="font-semibold text-white">
+                  GitHub
+                </h4>
 
-                  <p className="text-slate-400">
-                    github.com/JDiego-13
-                  </p>
-                </div>
+                <p className="text-slate-400">
+                  github.com/JDiego-13
+                </p>
+              </div>
             </a>
 
-            <a 
+            <motion.a
               href="mailto:diegozack6@gmail.com"
-              className="mt-8 inline-flex rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transition hover:bg-blue-600"
+              whileHover={{ scale: 1.05, y:-3 }}
+              whileTap={{ scale: 0.96 }}
+              className="mt-8 inline-flex rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white"
             >
               Enviar correo
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>
