@@ -134,7 +134,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="/CV_Diego_Espinoza.pdf"
+              href="/portafolio2026/CV_Diego_Espinoza.pdf"
               className="flex items-center gap-2 rounded-xl border border-slate-700 px-6 py-3 text-white transition hover:border-blue-500 hover:text-blue-500"
               whileHover={{ y: -3, scale: 1.03 }}
               whileTap={{ scale: 0.96 }}

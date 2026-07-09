@@ -14,6 +14,11 @@ export const projects = [
         ],
         description:
         "Sistema desarrollado completamente desde cero para la administración de contenido entre franquicias. Participé desde el levantamiento de requerimientos, diseño de base de datos y desarrollo frontend y backend.",
+        
+        website: "https://www.felizviaje.mx/",
+        websiteLabel: "Sitio de la empresa",
+        
+        //Opcionales
         github:"",
         demo:""
     }

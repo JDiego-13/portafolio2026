@@ -33,10 +33,7 @@ const cardVariant: Variants = {
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="bg-slate-950 px-6 py-28"
-    >
+    <section id="projects" className="bg-slate-950 px-6 py-28">
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="mb-16 text-center"
@@ -45,32 +42,28 @@ const Projects = () => {
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
         >
-          <p className="font-medium text-blue-500">
-            Mi trabajo
-          </p>
+          <p className="font-medium text-blue-500">Mi trabajo</p>
 
           <h2 className="mt-2 text-4xl font-bold text-white md:text-5xl   ">
             Proyecto destacado
           </h2>
         </motion.div>
 
-
         {projects.map((projects) => (
           <motion.article
-           variants={cardVariant}
-           initial="hidden"
-           whileInView="visible"
-           viewport={{ once: false, amount: 0.2 }}
-           whileHover={{
-            y: -8,
-            transition: {
-              duration: 0.25,
-            },
-           }}
-           className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20"
+            variants={cardVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            whileHover={{
+              y: -8,
+              transition: {
+                duration: 0.25,
+              },
+            }}
+            className="overflow-hidden rounded-3xl border border-slate-800 bg-slate-900 transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20"
           >
             <div className="grid md:grid-cols-2">
-
               {/* IMAGEN */}
               <div className="overflow-hidden bg-slate-950">
                 <motion.img
@@ -92,13 +85,9 @@ const Projects = () => {
                   {projects.title}
                 </h3>
 
-                <p className="mt-2 text-slate-400">
-                  {projects.company}
-                </p>
+                <p className="mt-2 text-slate-400">{projects.company}</p>
 
-                <p className="mb-8 text-sm text-slate-500">
-                  {projects.period}
-                </p>
+                <p className="mb-8 text-sm text-slate-500">{projects.period}</p>
 
                 <p className="leading-8 text-slate-300">
                   {projects.description}
@@ -112,7 +101,7 @@ const Projects = () => {
                       whileHover={{
                         scale: 1.08,
                         backgroundColor: "#2563eb",
-                        color: "#fff"
+                        color: "#fff",
                       }}
                       transition={{ duration: 0.2 }}
                       className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-sm text-slate-300"
@@ -123,17 +112,30 @@ const Projects = () => {
                 </div>
 
                 {/* BOTONES */}
-                <div className="mt-10 flex gap-4">
+                <div className="mt-10 flex flex-wrap gap-4">
+                  {projects.website && (
+                    <motion.a
+                      href={projects.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transition hover:bg-blue-600"
+                      whileHover={{ y: -3, scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
+                      {projects.websiteLabel}
+                    </motion.a>
+                  )}
+
                   {projects.demo && (
                     <motion.a
                       href={projects.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white transition hover:bg-blue-600"
-                      whileHover={{ y: -3, scale: 1.03, }}
+                      className="rounded-xl bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-700"
+                      whileHover={{ y: -3, scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
                     >
-                      Ver proyecto
+                      Ver demo
                     </motion.a>
                   )}
 
@@ -143,7 +145,6 @@ const Projects = () => {
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-white transition hover:border-blue-500 hover:text-blue-400"
-
                     >
                       GitHub
                     </a>
@@ -155,7 +156,7 @@ const Projects = () => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Projects;

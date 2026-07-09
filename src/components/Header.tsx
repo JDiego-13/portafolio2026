@@ -66,7 +66,7 @@ const Header = () => {
           </motion.a>
 
           <motion.a 
-            href="/CV_Diego_Espinoza.pdf"
+            href="/portafolio2026/CV_Diego_Espinoza.pdf"
             whileHover={{ scale: 1.05, y: -2}}
             whileTap={{ scale: 1.0 }}
             className="flex items-center gap-2 rounded-xl border border-blue-500 px-4 py-2 font-medium transition-all duration-300 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-blue-500/30"
