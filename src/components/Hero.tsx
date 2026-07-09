@@ -78,7 +78,26 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <p className="mb-4 text-blue-500 font-medium">👋 Hola, soy</p>
+          <p className="mb-4 flex items-center justify-center gap-2 font-medium text-blue-500 md:justify-start">
+            <motion.span
+            className="text-3xl md:text-4xl"
+              animate={{
+                rotate: [0, 20, -10, 20, 0],
+                y: [0, -2, 0],
+              }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                repeatDelay: 2,
+                ease: "easeInOut",
+              }}
+              style={{ originX: 0.7, originY: 0.7 }}
+              
+            >
+              👋
+            </motion.span>
+            <span>Hola, soy</span>
+          </p>
           <h1 className="mb-5 text-5xl font-extrabold text-white md:text-7xl">
             Diego <span className="text-blue-500"> Espinoza</span>
           </h1>

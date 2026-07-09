@@ -122,7 +122,10 @@ const Contact = () => {
               </div>
             </motion.a>
 
-            <a
+            <motion.a
+              variants={cardVariant}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ duration: 0.2,}}
               href="https://linkedin.com/in/jdiego13"
               target="_blank"
               rel="noreferrer"
@@ -141,9 +144,12 @@ const Contact = () => {
                   linkedin.com/in/jdiego13
                 </p>
               </div>
-            </a>
+            </motion.a>
 
-            <a
+            <motion.a
+              variants={cardVariant}
+              whileHover={{ y: -6, scale: 1.02 }}
+              transition={{ duration: 0.2,}}
               href="https://github.com/JDiego-13"
               target="_blank"
               rel="noreferrer"
@@ -162,7 +168,7 @@ const Contact = () => {
                   github.com/JDiego-13
                 </p>
               </div>
-            </a>
+            </motion.a>
 
             <motion.a
               href="mailto:diegozack6@gmail.com"

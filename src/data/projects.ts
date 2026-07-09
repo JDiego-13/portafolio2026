@@ -1,9 +1,10 @@
+import safra from "../assets/images/safra.jpg"
 export const projects = [
     {
         title: "SAFRA",
         company: "Agencia de Destinos Feliz Viaje",
         period: "Ago 2025 - Ene 2026",
-        image: "/src/assets/images/safra.jpg",
+        image: safra,
         technologies: [
             "PHP",
             "JavaScript",

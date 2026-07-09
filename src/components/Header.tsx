@@ -32,11 +32,11 @@ const Header = () => {
           <a href="#experience" className="transition hover:text-blue-400">
             Experiencia
           </a>
-          <a href="#projects" className="transition hover:text-blue-400">
-            Proyectos
-          </a>
           <a href="#skills" className="transition hover:text-blue-400">
             Skills
+          </a>
+          <a href="#projects" className="transition hover:text-blue-400">
+            Proyectos
           </a>
           <a href="#contact" className="transition hover:text-blue-400">
             Contacto
