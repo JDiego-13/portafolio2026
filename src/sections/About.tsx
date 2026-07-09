@@ -57,7 +57,7 @@ const About = () => {
           className="mb-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           variants={textVariant}
         >
           <p className="font-medium text-blue-500">
@@ -76,7 +76,7 @@ const About = () => {
             variants={textVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
 
             <p className="text-lg leading-8 text-slate-300">
@@ -100,7 +100,7 @@ const About = () => {
             variants={cardContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
           >
             <motion.div
               variants={cardVariant}

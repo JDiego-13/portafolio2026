@@ -1,24 +1,64 @@
 import { experience } from "../data/experience";
-import { motion } from "framer-motion";
+
+import { motion, type Variants } from "framer-motion";
+
+const cardVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const titleVariant: Variants = {
+  hidden: {
+    opacity: 0,
+    y: -30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Experience = () => {
   return (
-    <section
-      id="experience"
-      className="bg-slate-900 px-6 py-28"
-    >
+    <section id="experience" className="bg-slate-900 px-6 py-28">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-16 text-center text-4xl font-bold text-white">
+        <motion.h2
+          variants={titleVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          className="mb-16 text-center text-4xl font-bold text-white"
+        >
           Experiencia Profesional
-        </h2>
+        </motion.h2>
 
         <div className="space-y-8">
           {experience.map((job) => (
-            <div
+            <motion.div
               key={job.company}
+              variants={cardVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{
+                duration: 0.6,
+              }}
               className="rounded-2xl border border-slate-700 bg-slate-800 p-8 transition duration-300 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10"
             >
-
               {/* EMPRESA */}
               <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
                 {/* IZQUIERDA */}
@@ -49,16 +89,14 @@ const Experience = () => {
                     src={job.logo}
                     alt={job.company}
                     className="h-46 w-46 rounded-2xl border border-slate-700 bg-white object-contain p-4 shadow-lg"
-                    animate={{ y: [0, -3, 0 ]}}
+                    animate={{ y: [0, -3, 0] }}
                     transition={{
                       duration: 1,
                       repeat: Infinity,
-                      ease: "easeInOut"
+                      ease: "easeInOut",
                     }}
-                    
                   />
                 </div>
-
               </div>
 
               {/* TECNOLOGIAS */}
@@ -72,7 +110,7 @@ const Experience = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -8,7 +8,7 @@ const Footer = () => {
       className="border-t border-slate-800 bg-slate-950"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0}}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       transition={{ duration: 0.6 }}
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-10 md:flex-row">

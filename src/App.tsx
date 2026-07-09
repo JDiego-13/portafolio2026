@@ -6,11 +6,14 @@ import Skills from "./sections/Skills"
 import Projects from "./sections/Projects"
 import Contact from "./sections/Contact"
 import Footer from "./components/Footer" 
+import CursorGlow from "./components/CursorGlow"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
 
   return (
     <>
+      <CursorGlow/>
       <Header />
       <main>
         <Hero />
@@ -21,6 +24,8 @@ function App() {
         <Contact />
       </main>
       <Footer />
+
+      <ScrollToTop />
     </>
   )
 }

@@ -43,7 +43,7 @@ const Projects = () => {
           variants={titleVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <p className="font-medium text-blue-500">
             Mi trabajo
@@ -60,7 +60,7 @@ const Projects = () => {
            variants={cardVariant}
            initial="hidden"
            whileInView="visible"
-           viewport={{ once: true, amount: 0.2 }}
+           viewport={{ once: false, amount: 0.2 }}
            whileHover={{
             y: -8,
             transition: {

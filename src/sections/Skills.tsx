@@ -55,7 +55,7 @@ const Skills = () => {
           variants={titleVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: false, amount: 0.4 }}
         >
           <p className="font-medium text-blue-500">
             Tecnologías
@@ -73,7 +73,7 @@ const Skills = () => {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
         >
           {skills.map((group) => (
             <motion.div

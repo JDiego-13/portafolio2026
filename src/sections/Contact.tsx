@@ -53,7 +53,7 @@ const Contact = () => {
           variants={textVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <p className="font-medium text-blue-500">
             Trabajemos juntos
@@ -71,7 +71,7 @@ const Contact = () => {
             variants={textVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <h3 className="text-3xl font-bold text-white">
               ¿Tienes un proyecto en mente?
@@ -97,7 +97,7 @@ const Contact = () => {
             variants={cardContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}  
+            viewport={{ once: false }}  
           >
             <motion.a
               variants={cardVariant}
